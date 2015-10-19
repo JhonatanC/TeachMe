@@ -5,33 +5,35 @@ namespace TeachMe\Http\Controllers;
 use Illuminate\Http\Request;
 use TeachMe\Http\Requests;
 use TeachMe\Http\Controllers\Controller;
+use TeachMe\Entities\Ticket;
 
 class TicketsController extends Controller
 {
     public function latest()
     {
-        //dd('latest');
-        return view('tickets.list');
+
+        $ticket = Ticket::orderBy('created_at','DESC')->get();
+        return view('tickets.list',compact('ticket'));
     }
 
     public function popular()
     {
-        //dd('popular');
         return view('tickets.details');
     }
 
     public function open()
     {
-        dd('open');
+        //
     }
 
     public function closed()
     {
-        dd('closed');
+        //
     }
 
-    public function detalis($id)
+    public function details($id)
     {
-        dd('detalis: '. $id);
+        $ticket = Ticket::findOrFail($id);
+        return view('tickets.details',compact('ticket'));
     }
 }
