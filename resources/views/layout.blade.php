@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Document</title>
     {!! Html::style('/css/style.css') !!}
+    {!! Html::style('/css/normalize.css') !!}
+    {!! Html::style('/css/foundation.css') !!}
 </head>
 <body>
 <nav>
@@ -12,7 +14,7 @@
         <!--<li><a href="{{-- route('tickets.populares') --}}">Populares</a></li>-->
     </ul>
 </nav>
-    <div class="container">
+    <div class="row">
         @yield('content')
     </div>
 </body>
