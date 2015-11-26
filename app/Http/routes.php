@@ -1,12 +1,12 @@
 <?php
 
 Route::get('/', [
-    'as' => 'tickets.latest', // nombre de la ruta
+    'as'   => 'tickets.latest', // nombre de la ruta
     'uses' => 'TicketsController@latest' // controlador y acción de la ruta
 ]);
 
 Route::get('/populares', [
-    'as' => 'tickets.popular',
+    'as'   => 'tickets.popular',
     'uses' => 'TicketsController@popular'
 ]);
 

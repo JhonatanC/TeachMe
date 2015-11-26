@@ -11,24 +11,26 @@ class TicketsController extends Controller
 {
     public function latest()
     {
-
-        $ticket = Ticket::orderBy('created_at','DESC')->get();
-        return view('tickets.list',compact('ticket'));
+        $tickets = Ticket::orderBy('created_at', 'DES')->get();
+        return view('tickets.list',compact('tickets'));
     }
 
     public function popular()
     {
-        return view('tickets.details');
+        return view('tickets.list');
+        //return view('tickets.popular');
     }
 
     public function open()
     {
-        //
+        return view('tickets.list');
+        //return view('tickets.open');
     }
 
     public function closed()
     {
-        //
+        return view('tickets.list');
+        //return view('tickets.closed');
     }
 
     public function details($id)
