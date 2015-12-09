@@ -24,4 +24,3 @@ Route::get('solicitud/{id}',[
     'as' => 'tickets.details',
     'uses' => 'TicketsController@details'
 ]);
-

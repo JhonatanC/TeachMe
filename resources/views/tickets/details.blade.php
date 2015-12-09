@@ -19,14 +19,15 @@
 
             <div class="row">
                 <div class="col-lg-8">
-                    <button class="btn btn-danger">Número de votos : 12</button>
+                    <button class="btn btn-danger">Número de votos : {{ count($ticket->voters) }}</button>
                 </div>
             </div>
             <br/>
 
             <div class="row">
-                <div class="col-lg-2"> Usuario # 1 </div>
-                <div class="col-lg-2"> Usuario # 2 </div>
+                @foreach($ticket->voters as $user)
+                    <div class="col-lg-2"> {{ $user->name }} </div>
+                @endforeach
             </div>
             <br/>
 
@@ -65,7 +66,7 @@
 
             <div class="row">
                 <div class="col-lg-4">
-                    Número de Comentarios (9)
+                    Número de Comentarios {{ count($ticket->comments) }}
                 </div>
             </div>
             <div class="row">
@@ -74,66 +75,20 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-lg-8">
-                    <strong>Nombre del Usuario</strong>
-                </div>
-                <div class="col-lg-8">
-                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium cumque dolores dolorum
-                        eos ex facere fuga ipsam, laudantium maxime nemo, nisi pariatur perferendis sapiente sit
-                        suscipit. Laudantium magnam optio quibusdam.
+            @foreach($ticket->comments as $comment)
+                <div class="row">
+                    <div class="col-lg-8">
+                        <strong>{{ $comment->user->name }}</strong>
                     </div>
-                    <div>At aut distinctio ea magni minima officia quae saepe tempore. Aliquid at consequatur dolores,
-                        eos facilis iure iusto labore laborum, maxime mollitia odit pariatur quas quidem quisquam
-                        repellendus rerum sed?
+                    <div class="col-lg-8">
+                        <div> {{ $comment->comment }} </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <span class="glyphicon glyphicon-time"></span> {{ $comment->created_at->format('d/m/Y h:ia') }}
                     </div>
                 </div>
-                <div class="col-lg-8">
-                    <span class="glyphicon glyphicon-time"></span> 26/11/2015 14:55:42
-                </div>
-            </div>
-            <br/>
-
-            <div class="row">
-                <div class="col-lg-8">
-                    <strong>Nombre del Usuario</strong>
-                </div>
-                <div class="col-lg-8">
-                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium cumque dolores dolorum
-                        eos ex facere fuga ipsam, laudantium maxime nemo, nisi pariatur perferendis sapiente sit
-                        suscipit. Laudantium magnam optio quibusdam.
-                    </div>
-                    <div>At aut distinctio ea magni minima officia quae saepe tempore. Aliquid at consequatur dolores,
-                        eos facilis iure iusto labore laborum, maxime mollitia odit pariatur quas quidem quisquam
-                        repellendus rerum sed?
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <span class="glyphicon glyphicon-time"></span> 26/11/2015 14:55:42
-                </div>
-            </div>
-            <br/>
-
-            <div class="row">
-                <div class="col-lg-8">
-                    <strong>Nombre del Usuario</strong>
-                </div>
-                <div class="col-lg-8">
-                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium cumque dolores dolorum
-                        eos ex facere fuga ipsam, laudantium maxime nemo, nisi pariatur perferendis sapiente sit
-                        suscipit. Laudantium magnam optio quibusdam.
-                    </div>
-                    <div>At aut distinctio ea magni minima officia quae saepe tempore. Aliquid at consequatur dolores,
-                        eos facilis iure iusto labore laborum, maxime mollitia odit pariatur quas quidem quisquam
-                        repellendus rerum sed?
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <span class="glyphicon glyphicon-time"></span> 26/11/2015 14:55:42
-                </div>
-            </div>
-            <br/>
-
+                <br/>
+            @endforeach
 
         </div>
     </article>

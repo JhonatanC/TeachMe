@@ -13,6 +13,7 @@
         </div>
     </article>
 
+    <!--En envía el la variable ticket a través de compact, para utilizarlo en el archivo dentro de partials-->
     @foreach($tickets as $ticket)
         @include('tickets.partials.item',compact('ticket'))
     @endforeach
