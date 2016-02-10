@@ -7,7 +7,7 @@
                 </h2>
             </div>
             <div class="col-lg-4 col-lg-offset-2">
-                <span class="label label-success">{{ trans('status') }}</span>
+                @include('tickets.partials.status')
             </div>
         </div>
         <div class="row">
@@ -15,7 +15,7 @@
                 <button class="btn btn-primary">
                     <span class="glyphicon glyphicon-hand-right"></span> Votar
                 </button>
-                <a href="{{ route('tickets.details',$ticket) }}">
+                <a href="{{ route('details',$ticket->id) }}">
                     <span>{{ $ticket->voters()->count() }} Votos</span> -
                     <span>{{ $ticket->comments()->count() }} Comentarios</span>
                 </a>

@@ -3,7 +3,7 @@
 @section('content')
     <article class="row">
         <div class="col-lg-12">
-            <h1>{{ $title = trans('ticket.' .Route::currentRouteName() . '_title') }}</h1> <button class="btn btn-primary">Nueva Solicitud</button>
+            <h1>{{ $title = trans('ticket.' .Route::currentRouteName(). '_title') }}</h1> <button class="btn btn-primary">Nueva Solicitud</button>
         </div>
     </article>
 

@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -148,7 +148,7 @@ return [
         /**
          * Laravel collective
          */
-
+        //Collective\Html\HtmlServiceProvider::class,
         TeachMe\Providers\HtmlServiceProvider::class,
 
     ],

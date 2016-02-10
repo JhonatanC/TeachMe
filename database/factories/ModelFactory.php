@@ -15,8 +15,32 @@ $factory->define(TeachMe\Entities\User::class, function (Faker\Generator $faker)
     return [
         'name' => $faker->name,
         'email' => $faker->email,
-        'password' => bcrypt(str_random(10)),
+        'password' => bcrypt('123456'),
         'role' => $faker->randomElement(['editor','lector']),
         'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(TeachMe\Entities\Ticket::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->sentence,
+        'status' => $faker->randomElement(['open','closed']),
+        'user_id' => rand(1,10)
+    ];
+});
+
+$factory->define(TeachMe\Entities\TicketVote::class, function (Faker\Generator $faker) {
+    return [
+        'user_id' => rand(1,10),
+        'ticket_id' => rand(1,10)
+    ];
+});
+
+$factory->define(TeachMe\Entities\TicketComment::class, function (Faker\Generator $faker) {
+    return [
+        'comment' => $faker->paragraph,
+        'link' => $faker->url,
+        'user_id' => rand(1,10),
+        'ticket_id' => rand(1,10)
     ];
 });

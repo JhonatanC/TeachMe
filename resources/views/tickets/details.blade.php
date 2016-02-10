@@ -13,7 +13,7 @@
                     <p>{{$ticket->created_at->format('d/m/Y h:ia')}}</p>
                 </div>
                 <div class="col-lg-4 col-lg-offset-2">
-                    <span class="label label-success">{{$ticket->status}}</span>
+                    @include('tickets.partials.status')
                 </div>
             </div>
 

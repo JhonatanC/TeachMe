@@ -3,10 +3,10 @@
     return array(
 
         'menu' => array(
-            'tickets.latest'  => 'Recientes',
-            'tickets.popular' => 'Populares',
-            'tickets.open'    => 'Abiertas',
-            'tickets.closed'  => 'Recientes'
+            'latest'  => 'Recientes',
+            'popular' => 'Populares',
+            'open'    => 'Abiertas',
+            'closed'  => 'Finalizadas'
         )
 
     );
