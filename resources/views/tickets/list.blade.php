@@ -9,7 +9,8 @@
 
     <article class="row">
         <div class="col-lg-12">
-            <p>Hay {{ $tickets->total() }} {{ $title }}</p>
+            <p>{{ Lang::choice('ticket.' .Route::currentRouteName() . '_total', $tickets->total() ) }}</p>
+            <!-- <p>Hay {{-- $tickets->total() --}} {{-- $title --}}</p> -->
         </div>
     </article>
 
